@@ -1,12 +1,12 @@
 ---
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <nav class="sticky top-0 z-50 bg-white shadow-sm">
   <div class="max-w-6xl mx-auto px-5 flex items-center gap-6 h-16">
 
     <!-- Logo -->
     <a href={base} class="flex-shrink-0 mr-4">
-      <img src={`${base}design-ref/logoHerFrequency.png`} alt="Her Frequency" class="logo-img h-12 w-auto" style="mix-blend-mode:multiply; max-width:260px; object-fit:contain;" />
+      <img src={`${base}/design-ref/logoHerFrequency.png`} alt="Her Frequency" class="logo-img h-12 w-auto" style="mix-blend-mode:multiply; max-width:260px; object-fit:contain;" />
     </a>
 
     <!-- Nav links -->
