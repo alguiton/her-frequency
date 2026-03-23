@@ -1,0 +1,296 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Her Frequency",
+  "description": "High-energy hub for women in STEM. Evidence-based career and health insights.",
+  "url": "https://herfrequency.com"
+});
+---
+<BaseLayout
+  title="Her Frequency — STEM & Women's Health Hub"
+  description="Evidence-based career and health insights for women in STEM. The intersection of hormonal science and professional excellence."
+>
+  <script type="application/ld+json" set:html={jsonLd} slot="head" />
+
+  <!-- HERO -->
+  <section class="bg-fern-light pt-12 pb-14 px-5">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
+      <div>
+        <span class="tag text-xs font-bold uppercase text-fern tracking-widest mb-4 block">Women · STEM · Biology</span>
+        <h1 class="text-5xl md:text-6xl font-black leading-[1.08] tracking-tight text-fern-text mb-5">
+          Your Cycle.<br/>Your Career.<br/><span class="text-fern">Your Power.</span>
+        </h1>
+        <p class="text-forest-fern text-base md:text-lg leading-relaxed mb-8 max-w-md">
+          The intersection of hormonal science and professional excellence. Evidence-based insights for women in STEM who refuse to leave biology at the door.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="#journal" class="bg-fern hover:bg-dark-fern transition-colors text-white font-bold px-6 py-3 rounded-lg text-sm">Read the Journal →</a>
+          <a href="#newsletter" class="border-2 border-fern text-fern hover:bg-fern hover:text-white transition-colors font-bold px-6 py-3 rounded-lg text-sm">Free Newsletter</a>
+        </div>
+      </div>
+      <a href={`${base}articles/productivity-hormonal-cycles`} class="block rounded-2xl overflow-hidden bg-white shadow-md border border-fern-border group article-hover cursor-pointer">
+        <div class="overflow-hidden">
+          <img src={`${base}design-ref/reference%20pictures/eb-womenshealth1.jpg`} alt="Women at work — hormonal cycles and career performance" class="article-img w-full h-64 md:h-72 object-cover object-top" />
+        </div>
+        <div class="p-6">
+          <span class="tag text-xs font-bold uppercase text-fern tracking-widest">Featured · Biological Science</span>
+          <h2 class="text-xl font-black mt-2 mb-2 leading-snug text-fern-text group-hover:text-fern transition-colors">How Your Hormonal Phase Doubles Your Productivity — And Why No One Tells You</h2>
+          <p class="text-forest-fern text-sm leading-relaxed">Female employees report feeling twice as productive during ovulation phases, yet cycles remain a silent career cost. The data is in.</p>
+          <div class="mt-4 flex items-center gap-3">
+            <div class="w-7 h-7 rounded-full bg-fern flex items-center justify-center text-xs font-bold text-white">HF</div>
+            <span class="text-gray-400 text-xs">Her Frequency Editors · March 2026</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <div class="bg-white border-y border-fern-border py-6 px-5">
+    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-8">
+      <div class="stat-bar pl-4 py-1"><p class="text-3xl font-black text-fern">2×</p><p class="text-xs text-forest-fern mt-0.5 leading-tight">More productive during ovulation phases</p></div>
+      <div class="stat-bar pl-4 py-1"><p class="text-3xl font-black text-fern">7 in 10</p><p class="text-xs text-forest-fern mt-0.5 leading-tight">Women negatively impacted at work by their period</p></div>
+      <div class="stat-bar pl-4 py-1"><p class="text-3xl font-black text-fern">90%</p><p class="text-xs text-forest-fern mt-0.5 leading-tight">Experience period-related anxiety in the workplace</p></div>
+      <div class="stat-bar pl-4 py-1"><p class="text-3xl font-black text-fern">↑ Pay</p><p class="text-xs text-forest-fern mt-0.5 leading-tight">Cycles silently cost women pay rises &amp; promotions</p></div>
+    </div>
+  </div>
+
+  <!-- JOURNAL -->
+  <section id="journal" class="max-w-6xl mx-auto px-5 py-14">
+    <div class="flex items-center justify-between mb-8">
+      <h2 class="text-2xl font-black tracking-tight text-fern-text">The Journal</h2>
+      <a href="#" class="text-fern text-sm font-bold hover:underline">All articles →</a>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <a href={`${base}articles/mckinsey-myths-women-performance`} class="block bg-white rounded-2xl overflow-hidden border border-fern-border group article-hover cursor-pointer">
+        <div class="overflow-hidden"><img src={`${base}design-ref/reference%20pictures/women-at-work.png`} alt="Women in leadership walking factory floor" class="article-img w-full h-48 object-cover object-top" /></div>
+        <div class="p-5">
+          <span class="tag text-xs font-bold uppercase text-fern tracking-widest">Career · Policy</span>
+          <h3 class="font-black text-base leading-snug mt-2 mb-2 text-fern-text group-hover:text-fern transition-colors">McKinsey's Myths Debunked: What the Data Really Says About Women's Ambition</h3>
+          <p class="text-forest-fern text-xs leading-relaxed">Corporate narratives about women's performance have long relied on assumption. New research rewrites the story.</p>
+        </div>
+      </a>
+      <a href={`${base}articles/csuite-pipeline-stem-women`} class="block bg-white rounded-2xl overflow-hidden border border-fern-border group article-hover cursor-pointer">
+        <div class="overflow-hidden"><img src={`${base}design-ref/reference%20pictures/shutterstock568433176.jpg`} alt="Women scientists in lab" class="article-img w-full h-48 object-cover" /></div>
+        <div class="p-5">
+          <span class="tag text-xs font-bold uppercase text-fern tracking-widest">STEM · Leadership</span>
+          <h3 class="font-black text-base leading-snug mt-2 mb-2 text-fern-text group-hover:text-fern transition-colors">From Classroom to C-Suite: Breaking Barriers in the Energy Sector</h3>
+          <p class="text-forest-fern text-xs leading-relaxed">Global Study 2025 benchmarks reveal exactly where the pipeline breaks — and what hands-on strategy closes it.</p>
+        </div>
+      </a>
+      <a href={`${base}articles/hormones-mood-performance`} class="block bg-white rounded-2xl overflow-hidden border border-fern-border group article-hover cursor-pointer">
+        <div class="overflow-hidden"><img src={`${base}design-ref/reference%20pictures/burnout-768x768.png`} alt="Woman overwhelmed at desk" class="article-img w-full h-48 object-cover" /></div>
+        <div class="p-5">
+          <span class="tag text-xs font-bold uppercase text-fern tracking-widest">Health · Science</span>
+          <h3 class="font-black text-base leading-snug mt-2 mb-2 text-fern-text group-hover:text-fern transition-colors">Sex Hormones, Mood, and the Modern Office: What HR Should Know</h3>
+          <p class="text-forest-fern text-xs leading-relaxed">Studies confirm sex hormones significantly affect well-being and workplace performance. The structural response is overdue.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- DATA CALLOUT -->
+  <section class="bg-dark-fern py-16 px-5">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="tag text-xs font-bold uppercase text-fern-pale tracking-widest mb-3 block opacity-80">Research Insight</span>
+        <p class="text-6xl md:text-8xl font-black leading-none text-white mb-4">7 in 10<br/><span class="text-fern-pale">women</span></p>
+        <p class="text-green-200 text-lg leading-relaxed max-w-sm mb-6">report being negatively impacted by their period while on the job — yet most workplaces have no support structure in place.</p>
+        <a href={`${base}articles/workplace-impact-periods`} class="inline-block bg-fern hover:bg-fern/80 transition-colors text-white font-bold px-6 py-3 rounded-lg text-sm">Read: Structural Assessments of Modern Workplaces →</a>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-fern/20 rounded-2xl p-5 border border-fern/30"><p class="text-5xl font-black text-white">90%</p><p class="text-green-200 text-sm mt-2 leading-snug">experience period-related anxiety specifically at work</p></div>
+        <div class="bg-fern/20 rounded-2xl p-5 border border-fern/30"><p class="text-5xl font-black text-white">2×</p><p class="text-green-200 text-sm mt-2 leading-snug">productivity boost documented during ovulation phase</p></div>
+        <div class="bg-fern/20 rounded-2xl p-5 border border-fern/30 col-span-2">
+          <p class="text-fern-pale text-sm font-bold uppercase tracking-widest mb-2">Inclusive Benefits Impact</p>
+          <p class="text-green-200 text-sm leading-relaxed">STEM companies using inclusive employee benefits show measurably stronger long-term retention among women engineers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENERGY & INDUSTRY -->
+  <section id="stem" class="max-w-6xl mx-auto px-5 py-14">
+    <div class="flex items-center justify-between mb-8">
+      <h2 class="text-2xl font-black tracking-tight text-fern-text">Energy &amp; Industry</h2>
+      <a href="#" class="text-fern text-sm font-bold hover:underline">All →</a>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6">
+      <a href={`${base}articles/just-transition-women-energy`} class="block bg-white rounded-2xl overflow-hidden border border-fern-border group article-hover cursor-pointer md:row-span-2">
+        <div class="overflow-hidden"><img src={`${base}design-ref/reference%20pictures/shutterstock2455968781.jpg`} alt="Woman engineer at wind turbines" class="article-img w-full h-60 md:h-80 object-cover" /></div>
+        <div class="p-6">
+          <span class="tag text-xs font-bold uppercase text-fern tracking-widest">Energy · SDGs</span>
+          <h3 class="font-black text-xl leading-snug mt-2 mb-3 text-fern-text group-hover:text-fern transition-colors">Just Transition: Aligning the Global Energy Shift with Gender Parity</h3>
+          <p class="text-forest-fern text-sm leading-relaxed mb-4">Enabling the SDGs through inclusive energy transitions isn't idealism — it's an economic imperative. We examine the latest benchmarks from the Women in Energy Global Study 2025.</p>
+          <span class="text-fern text-sm font-bold">Read more →</span>
+        </div>
+      </a>
+      <a href={`${base}articles/innovation-female-representation-stem`} class="block bg-white rounded-2xl overflow-hidden border border-fern-border group article-hover cursor-pointer">
+        <div class="flex gap-4 p-4 items-start">
+          <div class="overflow-hidden rounded-xl flex-shrink-0"><img src={`${base}design-ref/reference%20pictures/Veolia-image-3-696x392.png`} alt="Woman engineer at solar panels" class="article-img w-28 h-24 object-cover" /></div>
+          <div>
+            <span class="tag text-xs font-bold uppercase text-fern tracking-widest">Representation</span>
+            <h3 class="font-black text-sm leading-snug mt-1 mb-1 text-fern-text group-hover:text-fern transition-colors">Innovation in Representation: What's Actually Working in 2025</h3>
+            <p class="text-forest-fern text-xs leading-relaxed">The latest strategies companies use to increase female representation in STEM fields.</p>
+          </div>
+        </div>
+      </a>
+      <a href={`${base}articles/energy-career-opportunity-structures`} class="block bg-white rounded-2xl overflow-hidden border border-fern-border group article-hover cursor-pointer">
+        <div class="flex gap-4 p-4 items-start">
+          <div class="overflow-hidden rounded-xl flex-shrink-0"><img src={`${base}design-ref/reference%20pictures/IEA-energy-woman-worker.jpg`} alt="Woman engineer at oil refinery" class="article-img w-28 h-24 object-cover" /></div>
+          <div>
+            <span class="tag text-xs font-bold uppercase text-fern tracking-widest">Opportunity Structure</span>
+            <h3 class="font-black text-sm leading-snug mt-1 mb-1 text-fern-text group-hover:text-fern transition-colors">Gendered Opportunity: How Energy Companies Structure Careers</h3>
+            <p class="text-forest-fern text-xs leading-relaxed">Analyzing how gender shapes career opportunity structures across global energy firms.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- HEALTH -->
+  <section id="health" class="bg-fern-pale border-y border-fern-border py-14 px-5">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl font-black tracking-tight text-fern-text">Biological Health</h2>
+        <a href="#" class="text-fern text-sm font-bold hover:underline">All →</a>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href={`${base}articles/productivity-hormonal-cycles`} class="block bg-white rounded-2xl overflow-hidden border border-fern-border group article-hover cursor-pointer">
+          <div class="overflow-hidden"><img src={`${base}design-ref/reference%20pictures/Womens-Health-in-The-Workplace-1024x576.png`} alt="Doctor with patient — women's health" class="article-img w-full h-44 object-cover" /></div>
+          <div class="p-5">
+            <span class="tag text-xs font-bold uppercase text-fern tracking-widest">Cycles · Biology</span>
+            <h3 class="font-black text-sm leading-snug mt-2 mb-1 text-fern-text group-hover:text-fern transition-colors">The Hidden Productivity Curve: Mapping Your Cycle to Your Calendar</h3>
+            <p class="text-forest-fern text-xs leading-relaxed">Studies show hormonal phases predictably shift cognitive strengths. Here's how to map it.</p>
+          </div>
+        </a>
+        <a href={`${base}articles/inclusive-benefits-stem-retention`} class="block bg-white rounded-2xl overflow-hidden border border-fern-border group article-hover cursor-pointer">
+          <div class="overflow-hidden"><img src={`${base}design-ref/reference%20pictures/portrait-of-railway-technician-worker-in-safety-ve-2024-03-25-23-28-25-utc.jpg`} alt="Woman engineer in industry" class="article-img w-full h-44 object-cover" /></div>
+          <div class="p-5">
+            <span class="tag text-xs font-bold uppercase text-fern tracking-widest">PCOS · Advocacy</span>
+            <h3 class="font-black text-sm leading-snug mt-2 mb-1 text-fern-text group-hover:text-fern transition-colors">PCOS and the Engineering Workplace: Building Accommodation Frameworks</h3>
+            <p class="text-forest-fern text-xs leading-relaxed">Policy frameworks that actually work for engineers managing chronic hormonal conditions.</p>
+          </div>
+        </a>
+        <a href={`${base}articles/future-readiness-women-stem`} class="block bg-white rounded-2xl overflow-hidden border border-fern-border group article-hover cursor-pointer">
+          <div class="overflow-hidden"><img src={`${base}design-ref/reference%20pictures/images.jpg`} alt="Young woman using tech" class="article-img w-full h-44 object-cover" /></div>
+          <div class="p-5">
+            <span class="tag text-xs font-bold uppercase text-fern tracking-widest">Pregnancy · Career</span>
+            <h3 class="font-black text-sm leading-snug mt-2 mb-1 text-fern-text group-hover:text-fern transition-colors">Pregnancy &amp; Progression: Science-Backed Strategies for Staying on Track</h3>
+            <p class="text-forest-fern text-xs leading-relaxed">Evidence on how to navigate career milestones and pregnancy without derailing either.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section id="events" class="max-w-6xl mx-auto px-5 py-14">
+    <div class="flex items-center justify-between mb-8">
+      <h2 class="text-2xl font-black tracking-tight text-fern-text">STEM Events &amp; Conferences</h2>
+      <a href="#" class="text-fern text-sm font-bold hover:underline">Full calendar →</a>
+    </div>
+    <div class="grid md:grid-cols-2 gap-5">
+      <a href="#" class="flex bg-white rounded-2xl overflow-hidden border border-fern-border group article-hover cursor-pointer">
+        <div class="overflow-hidden w-36 flex-shrink-0"><img src={`${base}design-ref/reference%20pictures/IEA-energy-woman-worker.jpg`} alt="Women in Energy Summit" class="article-img w-full h-full object-cover" /></div>
+        <div class="p-5">
+          <span class="tag text-xs font-bold uppercase text-fern tracking-widest">Energy · Leadership</span>
+          <h3 class="font-black text-sm mt-1 mb-1 text-fern-text group-hover:text-fern transition-colors">Women in Energy Summit 2026</h3>
+          <p class="text-forest-fern text-xs mb-2">London, UK · Apr 14–16, 2026</p>
+          <span class="text-fern text-xs font-bold">Register →</span>
+        </div>
+      </a>
+      <a href="#" class="flex bg-white rounded-2xl overflow-hidden border border-fern-border group article-hover cursor-pointer">
+        <div class="overflow-hidden w-36 flex-shrink-0"><img src={`${base}design-ref/reference%20pictures/images.jpg`} alt="Grace Hopper Celebration" class="article-img w-full h-full object-cover" /></div>
+        <div class="p-5">
+          <span class="tag text-xs font-bold uppercase text-fern tracking-widest">Tech · Computing</span>
+          <h3 class="font-black text-sm mt-1 mb-1 text-fern-text group-hover:text-fern transition-colors">Grace Hopper Celebration 2026</h3>
+          <p class="text-forest-fern text-xs mb-2">Orlando, FL · Sep 22–25, 2026</p>
+          <span class="text-fern text-xs font-bold">Register →</span>
+        </div>
+      </a>
+      <a href="#" class="flex bg-white rounded-2xl overflow-hidden border border-fern-border group article-hover cursor-pointer">
+        <div class="overflow-hidden w-36 flex-shrink-0"><img src={`${base}design-ref/reference%20pictures/portrait-of-railway-technician-worker-in-safety-ve-2024-03-25-23-28-25-utc.jpg`} alt="SWE Conference" class="article-img w-full h-full object-cover" /></div>
+        <div class="p-5">
+          <span class="tag text-xs font-bold uppercase text-fern tracking-widest">Engineering</span>
+          <h3 class="font-black text-sm mt-1 mb-1 text-fern-text group-hover:text-fern transition-colors">Society of Women Engineers Annual</h3>
+          <p class="text-forest-fern text-xs mb-2">Seattle, WA · Oct 2–4, 2026</p>
+          <span class="text-fern text-xs font-bold">Register →</span>
+        </div>
+      </a>
+      <a href="#" class="flex bg-white rounded-2xl overflow-hidden border border-fern-border group article-hover cursor-pointer">
+        <div class="overflow-hidden w-36 flex-shrink-0"><img src={`${base}design-ref/reference%20pictures/shutterstock568433176.jpg`} alt="Future Readiness Forum" class="article-img w-full h-full object-cover" /></div>
+        <div class="p-5">
+          <span class="tag text-xs font-bold uppercase text-fern tracking-widest">Science · Policy</span>
+          <h3 class="font-black text-sm mt-1 mb-1 text-fern-text group-hover:text-fern transition-colors">Future Readiness in STEM Forum</h3>
+          <p class="text-forest-fern text-xs mb-2">Virtual · May 7, 2026</p>
+          <span class="text-fern text-xs font-bold">Register →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- THE COLLECTIVE -->
+  <section id="collective" class="bg-fern-pale border-y border-fern-border py-14 px-5">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between mb-8">
+        <div>
+          <h2 class="text-2xl font-black tracking-tight text-fern-text">The Collective</h2>
+          <p class="text-forest-fern text-sm mt-1">Networking, mentorship, and community for women in STEM.</p>
+        </div>
+        <a href="#" class="text-fern text-sm font-bold hover:underline">Join →</a>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="#" class="block bg-white rounded-2xl overflow-hidden border border-fern-border group article-hover cursor-pointer">
+          <div class="overflow-hidden"><img src={`${base}design-ref/reference%20pictures/eb-womenshealth1.jpg`} alt="Women working together — mentorship" class="article-img w-full h-44 object-cover object-top" /></div>
+          <div class="p-5">
+            <div class="w-9 h-9 bg-fern/15 rounded-lg flex items-center justify-center mb-3">
+              <svg class="w-5 h-5 text-fern" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4c1.5 2 4 3 8 3s6.5 1 8 3M4 20c1.5-2 4-3 8-3s6.5-1 8-3M4 12h16"/></svg>
+            </div>
+            <h3 class="font-black text-base mb-2 text-fern-text group-hover:text-fern transition-colors">Mentorship Matching</h3>
+            <p class="text-forest-fern text-sm leading-relaxed">Paired one-to-one with senior women in your sector. Science-backed frameworks for career navigation.</p>
+          </div>
+        </a>
+        <a href="#" class="block bg-white rounded-2xl overflow-hidden border border-fern-border group article-hover cursor-pointer">
+          <div class="overflow-hidden"><img src={`${base}design-ref/reference%20pictures/women-at-work.png`} alt="Women on factory floor — STEM peer networks" class="article-img w-full h-44 object-cover object-top" /></div>
+          <div class="p-5">
+            <div class="w-9 h-9 bg-fern/15 rounded-lg flex items-center justify-center mb-3">
+              <svg class="w-5 h-5 text-fern" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path stroke-linecap="round" d="M10 6.5h4M6.5 14V10M17.5 10v4"/></svg>
+            </div>
+            <h3 class="font-black text-base mb-2 text-fern-text group-hover:text-fern transition-colors">Peer Networks</h3>
+            <p class="text-forest-fern text-sm leading-relaxed">Industry-specific groups across energy, biotech, aerospace, and engineering. Real talk, no filters.</p>
+          </div>
+        </a>
+        <a href="#" class="block bg-white rounded-2xl overflow-hidden border border-fern-border group article-hover cursor-pointer">
+          <div class="overflow-hidden"><img src={`${base}design-ref/reference%20pictures/Woman%20working%20with%20machine%20Shutterstock.jpg`} alt="Woman operating machinery — career accelerator" class="article-img w-full h-44 object-cover" /></div>
+          <div class="p-5">
+            <div class="w-9 h-9 bg-fern/15 rounded-lg flex items-center justify-center mb-3">
+              <svg class="w-5 h-5 text-fern" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h3 class="font-black text-base mb-2 text-fern-text group-hover:text-fern transition-colors">Career Accelerator</h3>
+            <p class="text-forest-fern text-sm leading-relaxed">Evidence-based tools for navigating pay negotiations, promotions, and the C-suite pipeline.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section id="newsletter" class="bg-fern py-16 px-5">
+    <div class="max-w-xl mx-auto text-center">
+      <span class="tag text-xs font-bold uppercase text-fern-pale tracking-widest mb-3 block opacity-90">Free. No noise.</span>
+      <h2 class="text-3xl md:text-4xl font-black leading-tight text-white mb-4">Science. Career. Biology.<br/>Weekly in your inbox.</h2>
+      <p class="text-green-100 text-sm mb-8 leading-relaxed">Evidence-based insights for women in STEM — no wellness fluff, no corporate platitudes. Just the data you need to perform at full frequency.</p>
+      <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onsubmit="return false;">
+        <input type="email" placeholder="your@email.com" class="flex-1 bg-white/20 border border-white/30 focus:border-white outline-none rounded-lg px-4 py-3 text-sm text-white placeholder-green-200" />
+        <button type="submit" class="bg-dark-fern hover:bg-fern-text transition-colors text-white font-bold px-6 py-3 rounded-lg text-sm whitespace-nowrap">Subscribe →</button>
+      </form>
+      <p class="text-green-200 text-xs mt-4 opacity-70">No spam. Unsubscribe anytime.</p>
+    </div>
+  </section>
+</BaseLayout>

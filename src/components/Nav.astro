@@ -1,0 +1,85 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+<nav class="sticky top-0 z-50 bg-white shadow-sm">
+  <div class="max-w-6xl mx-auto px-5 flex items-center gap-6 h-16">
+
+    <!-- Logo -->
+    <a href={base} class="flex-shrink-0 mr-4">
+      <img src={`${base}design-ref/logoHerFrequency.png`} alt="Her Frequency" class="logo-img h-12 w-auto" style="mix-blend-mode:multiply; max-width:260px; object-fit:contain;" />
+    </a>
+
+    <!-- Nav links -->
+    <div class="hidden md:flex items-center gap-1 flex-1">
+      <a href={`${base}#journal`} class="px-3 py-2 text-sm font-semibold text-fern-text hover:text-fern hover:bg-fern-light rounded-lg transition-colors">Journal</a>
+      <a href={`${base}#stem`}    class="px-3 py-2 text-sm font-semibold text-fern-text hover:text-fern hover:bg-fern-light rounded-lg transition-colors">STEM</a>
+      <a href={`${base}#health`}  class="px-3 py-2 text-sm font-semibold text-fern-text hover:text-fern hover:bg-fern-light rounded-lg transition-colors">Health</a>
+
+      <!-- The Collective dropdown -->
+      <div class="relative" id="collective-wrap">
+        <button onclick="toggleCollective()" class="flex items-center gap-1 px-3 py-2 text-sm font-semibold text-fern-text hover:text-fern hover:bg-fern-light rounded-lg transition-colors">
+          The Collective
+          <svg class="w-3.5 h-3.5 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div id="collective-menu" class="hidden absolute left-0 top-full mt-1 w-52 bg-white border border-fern-border rounded-xl shadow-lg py-1 z-50">
+          <a href={`${base}#collective`} onclick="toggleCollective()" class="block px-4 py-2.5 text-sm text-fern-text hover:bg-fern-light hover:text-fern transition-colors">Mentorship Matching</a>
+          <a href={`${base}#collective`} onclick="toggleCollective()" class="block px-4 py-2.5 text-sm text-fern-text hover:bg-fern-light hover:text-fern transition-colors">Peer Networks</a>
+          <a href={`${base}#collective`} onclick="toggleCollective()" class="block px-4 py-2.5 text-sm text-fern-text hover:bg-fern-light hover:text-fern transition-colors">Career Accelerator</a>
+        </div>
+      </div>
+
+      <a href={`${base}#events`} class="px-3 py-2 text-sm font-semibold text-fern-text hover:text-fern hover:bg-fern-light rounded-lg transition-colors">Events</a>
+    </div>
+
+    <!-- Search -->
+    <div class="hidden md:flex items-center bg-fern-light border border-fern-border rounded-lg px-3 py-1.5 gap-2 w-48">
+      <svg class="w-4 h-4 text-forest-fern flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path stroke-linecap="round" d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" placeholder="Search…" class="bg-transparent text-sm text-fern-text placeholder-forest-fern outline-none w-full" />
+    </div>
+
+    <!-- CTA -->
+    <a href={`${base}#newsletter`} class="flex-shrink-0 bg-dark-fern hover:bg-fern-text transition-colors text-white text-sm font-bold px-5 py-2 rounded-lg">
+      Subscribe Free
+    </a>
+
+    <!-- Mobile hamburger -->
+    <button id="menu-btn" onclick="toggleMenu()" class="md:hidden ml-auto text-forest-fern">
+      <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+
+  <!-- Accent stripe -->
+  <div class="h-0.5 bg-fern"></div>
+
+  <!-- Mobile dropdown -->
+  <div id="nav-menu" class="hidden md:hidden bg-white border-t border-fern-border px-5 py-3 space-y-1">
+    <a href={`${base}#journal`}    onclick="toggleMenu()" class="block px-3 py-2 text-sm font-semibold text-fern-text hover:text-fern hover:bg-fern-light rounded-lg">Journal</a>
+    <a href={`${base}#stem`}       onclick="toggleMenu()" class="block px-3 py-2 text-sm font-semibold text-fern-text hover:text-fern hover:bg-fern-light rounded-lg">STEM</a>
+    <a href={`${base}#health`}     onclick="toggleMenu()" class="block px-3 py-2 text-sm font-semibold text-fern-text hover:text-fern hover:bg-fern-light rounded-lg">Health</a>
+    <a href={`${base}#collective`} onclick="toggleMenu()" class="block px-3 py-2 text-sm font-semibold text-fern-text hover:text-fern hover:bg-fern-light rounded-lg">The Collective</a>
+    <a href={`${base}#events`}     onclick="toggleMenu()" class="block px-3 py-2 text-sm font-semibold text-fern-text hover:text-fern hover:bg-fern-light rounded-lg">Events</a>
+  </div>
+</nav>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('nav-menu');
+    const iconOpen = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
+    menu.classList.toggle('hidden');
+    iconOpen.classList.toggle('hidden');
+    iconClose.classList.toggle('hidden');
+  }
+  function toggleCollective() {
+    document.getElementById('collective-menu').classList.toggle('hidden');
+  }
+  document.addEventListener('click', function(e) {
+    const mob = document.getElementById('nav-menu');
+    const btn = document.getElementById('menu-btn');
+    if (mob && !mob.classList.contains('hidden') && !mob.contains(e.target) && !btn.contains(e.target)) toggleMenu();
+    const col = document.getElementById('collective-menu');
+    const wrap = document.getElementById('collective-wrap');
+    if (col && !col.classList.contains('hidden') && !wrap.contains(e.target)) col.classList.add('hidden');
+  });
+</script>

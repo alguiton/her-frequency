@@ -1,0 +1,86 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+const { frontmatter } = Astro.props;
+const base = import.meta.env.BASE_URL;
+
+const {
+  title,
+  description,
+  date,
+  tag,
+  image,
+  imageAlt,
+  readTime = '5 min read',
+} = frontmatter;
+
+const formattedDate = new Date(date).toLocaleDateString('en-GB', {
+  day: 'numeric', month: 'long', year: 'numeric'
+});
+
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "image": `https://herfrequency.com${image}`,
+  "datePublished": date,
+  "author": { "@type": "Organization", "name": "Her Frequency" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Her Frequency",
+    "logo": { "@type": "ImageObject", "url": "https://herfrequency.com/design-ref/logoHerFrequency.png" }
+  }
+});
+---
+<BaseLayout title={title} description={description} ogImage={image} type="article">
+  <script type="application/ld+json" set:html={jsonLd} slot="head" />
+
+  <!-- Article hero -->
+  <div class="relative h-72 md:h-96 overflow-hidden">
+    <img src={image} alt={imageAlt} class="w-full h-full object-cover object-top" />
+    <div class="absolute inset-0 bg-gradient-to-t from-fern-text/80 via-fern-text/30 to-transparent"></div>
+    <div class="absolute bottom-0 left-0 right-0 p-6 md:p-10 max-w-4xl mx-auto">
+      <span class="tag text-xs font-bold uppercase text-fern-pale tracking-widest mb-3 block">{tag}</span>
+      <h1 class="text-2xl md:text-4xl font-black text-white leading-tight">{title}</h1>
+    </div>
+  </div>
+
+  <!-- Author + meta bar -->
+  <div class="bg-white border-b border-fern-border py-4 px-5">
+    <div class="max-w-2xl mx-auto flex items-center gap-4">
+      <div class="w-9 h-9 rounded-full bg-fern flex items-center justify-center text-xs font-black text-white flex-shrink-0">HF</div>
+      <div>
+        <p class="text-sm font-semibold text-fern-text">Her Frequency Editors</p>
+        <p class="text-xs text-forest-fern">{formattedDate} · {readTime}</p>
+      </div>
+      <a href={base} class="ml-auto text-xs text-fern font-bold hover:underline">← Back to home</a>
+    </div>
+  </div>
+
+  <!-- Article body -->
+  <article class="max-w-2xl mx-auto px-5 py-12 prose">
+    <slot />
+  </article>
+
+  <!-- Newsletter CTA -->
+  <section class="bg-fern py-16 px-5">
+    <div class="max-w-xl mx-auto text-center">
+      <span class="tag text-xs font-bold uppercase text-fern-pale tracking-widest mb-3 block opacity-90">Free. No noise.</span>
+      <h2 class="text-3xl font-black leading-tight text-white mb-4">
+        Science. Career. Biology.<br/>Weekly in your inbox.
+      </h2>
+      <p class="text-green-100 text-sm mb-8 leading-relaxed">
+        Evidence-based insights for women in STEM — no wellness fluff, no corporate platitudes.
+      </p>
+      <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onsubmit="return false;">
+        <input type="email" placeholder="your@email.com"
+          class="flex-1 bg-white/20 border border-white/30 focus:border-white outline-none rounded-lg px-4 py-3 text-sm text-white placeholder-green-200" />
+        <button type="submit" class="bg-dark-fern hover:bg-fern-text transition-colors text-white font-bold px-6 py-3 rounded-lg text-sm whitespace-nowrap">
+          Subscribe →
+        </button>
+      </form>
+      <p class="text-green-200 text-xs mt-4 opacity-70">No spam. Unsubscribe anytime.</p>
+    </div>
+  </section>
+</BaseLayout>
