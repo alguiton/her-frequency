@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/ArticleLayout.astro
-title: "How Your Cycle Can Shape Focus, Energy and Work — and How to Work With It"
-description: "Understanding how hormonal changes affect your working day isn't about limitation. It's about finally having the map."
+title: "How Your Cycle Shapes Your Focus, Energy and Work"
+description: "The emotional and psychological effects of the menstrual cycle are well documented — yet almost entirely absent from workplace design. That needs to change."
 date: "2026-04-01"
 tag: "BIOLOGICAL CYCLES · WELLBEING"
 image: "/design-ref/reference%20pictures/burnout-768x768.png"
@@ -9,24 +9,22 @@ imageAlt: "Woman at desk looking overwhelmed"
 readTime: "6 min read"
 ---
 
-There are days when everything at work feels like wading through treacle. You are not tired in the way that sleep fixes. You are not unwell in a way you can name. You are simply — off. And then, a week or two later, the same work flows. You catch yourself surprised by your own clarity.
+Ask most women to describe their experience of work across the month and they will tell you it is not linear. Some weeks they walk into a room and own it. Other weeks they sit in the same room and feel like they are watching themselves from the outside, managing anxiety they cannot entirely explain, pushing through a fog that no amount of caffeine touches.
 
-If this sounds familiar, you are not alone. And you are not imagining it.
+What they often do not know — because no one has told them — is that this is not a mood disorder. It is a hormonal pattern. And it is one of the most common, least discussed influences on women's experience of work.
 
-For millions of women, this rhythm has a biological explanation. The hormonal changes across the menstrual cycle affect far more than reproduction — they shape mood, energy, cognitive function, pain sensitivity and social confidence in measurable, documented ways. Understanding this is not a call to accommodate limitation. It is an invitation to stop fighting your own biology and start working with it.
+The emotional and psychological effects of the menstrual cycle are well documented in clinical research, even if they remain almost entirely absent from HR policy and workplace design. Oestrogen, which builds through the first half of the cycle, has a stabilising effect on serotonin and dopamine — the neurotransmitters most associated with confidence, motivation and emotional regulation. When oestrogen drops sharply in the days before menstruation, so can mood, patience, and the ability to brush off the small frustrations that would normally slide past unnoticed.
 
-The research is clear on several things. Oestrogen — which rises through the first half of the cycle — has a broadly positive effect on mood, motivation and verbal cognition. Progesterone, which rises after ovulation, can increase fatigue and anxiety in the luteal phase for many women. Prostaglandins released during menstruation can cause discomfort that ranges from mild to significant. These are not character flaws. They are chemistry.
+For many women, this translates into very specific workplace experiences: a performance review in the wrong week that lands harder than it should. A piece of critical feedback that triggers a spiral of self-doubt that evaporates four days later. A presentation that felt like a failure at the time, re-watched the following week with the puzzling realisation that it was actually fine. These are not imagined experiences. They are the predictable result of a neurological environment that changes across the month — and a workplace that has no framework for understanding it.
 
-What this means practically is that the experience of work can feel genuinely different at different points in the month — and that this is normal. The problem is not the cycle itself. The problem is that most workplaces were designed as though cycles do not exist. Fixed deadlines, static expectations, a culture that rewards uniform output regardless of physiological reality — these structures do not serve anyone particularly well, and they serve cycling bodies least of all.
+The clinical term for significant premenstrual mood symptoms is Premenstrual Syndrome, or PMS, which affects up to 80% of women to some degree. A more severe form, Premenstrual Dysphoric Disorder (PMDD), affects between 3 and 8% of women of reproductive age and is recognised by NICE as a serious condition that can significantly impair daily functioning. Yet neither condition appears in most occupational health frameworks. Neither is routinely discussed in workplace wellbeing programmes. And women who are affected are overwhelmingly left to manage alone, often without even the language to name what is happening to them.
 
-The good news is that awareness changes everything. When you understand your own pattern, you can begin to shape your schedule — however modestly — around it. Track your cycle for a few months alongside simple notes about your energy and focus. You may find that certain weeks are reliably easier for creative or social tasks, while others are better suited to deep analytical work. You may find that one or two days each month are genuinely harder, and that protecting those days — blocking unnecessary meetings, shifting deadlines where possible — makes an outsized difference to your experience of work.
+This matters beyond individual wellbeing. Presenteeism — showing up to work while functioning significantly below capacity — costs UK employers an estimated £15.1 billion annually according to research by the Centre for Mental Health. A portion of that is directly attributable to menstrual health conditions that are going unaddressed. When anxiety spikes in the luteal phase, when concentration narrows, when emotional resilience lowers, the cost is not just personal. It is operational.
 
-This is not about lowering standards. Research on women's workplace wellbeing consistently shows that when women have flexibility to manage their schedules, output, quality of work and retention all improve. The accommodation is not a concession. It is smart design.
+The practical response does not have to be complicated. For individuals, tracking mood alongside cycle phase over two to three months can be quietly revelatory — not to pathologise normal variation, but to contextualise it. Knowing that a wave of self-doubt is likely to arrive around day 24, and equally likely to lift by day 28, changes its power considerably. Named, it becomes manageable. Unnamed, it masquerades as truth.
 
-For those in leadership or HR roles, the evidence is increasingly hard to ignore. A growing body of research links menstrual health to presenteeism — the phenomenon of being physically present at work but functioning below capacity. Studies suggest this costs UK businesses billions annually in reduced productivity. Much of this is invisible precisely because menstrual health remains a taboo subject at work. When it becomes possible to name the issue, it becomes possible to address it.
+For managers and HR professionals, the entry point is culture rather than policy. Creating environments in which women feel safe to say they are having a difficult few days — without needing to explain the biology, justify the experience, or fear being seen as unreliable — is not a complex structural change. It is a shift in how questions are asked and how answers are received. From there, flexible scheduling, access to occupational health support, and the option to adjust workload temporarily during high-impact days become meaningful rather than theoretical.
 
-None of this requires wholesale change overnight. It starts with conversations — within teams, with managers, with HR — that create the conditions for women to be honest about their needs without fear of judgment or career cost. It continues with flexible working policies that are genuinely accessible, not just written into a handbook and ignored in practice. And it deepens when organisations recognise that supporting women's health is not a welfare initiative — it is a performance strategy.
+The women in your teams are already managing this. Every month, quietly, alongside everything else they are managing. The question is whether the organisation is making that easier or harder.
 
-You are not inconsistent. You are not weak. You are running on a monthly rhythm that the majority of professional environments have simply never accounted for. The more women understand this about themselves, and the more workplaces are willing to listen, the better work becomes — for everyone.
-
-**Her Frequency exists to give you this knowledge, and the tools to use it.** Subscribe below and we will be in your inbox every two weeks.
+**Her Frequency is here for every part of the month — not just the peak.** Subscribe below and we will be in your inbox every two weeks.
