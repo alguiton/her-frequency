@@ -4,8 +4,8 @@ title: "The Hidden Pattern Behind Your Best Weeks at Work"
 description: "Some weeks at work just flow. The science behind why — and how to use it."
 date: "2026-03-23"
 tag: "BIOLOGICAL CYCLES · CAREER"
-image: "/design-ref/reference%20pictures/eb-womenshealth1.jpg"
-imageAlt: "Woman smiling confidently at office desk"
+image: "/design-ref/reference%20pictures/cycle-calendar.png"
+imageAlt: "Woman planning her schedule with a calendar on the wall"
 readTime: "7 min read"
 ---
 
