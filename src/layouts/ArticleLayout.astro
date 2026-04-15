@@ -38,7 +38,7 @@ const jsonLd = JSON.stringify({
 
   <!-- Article hero -->
   <div class="relative h-72 md:h-96 overflow-hidden">
-    <img src={`${base}${image}`} alt={imageAlt} class="w-full h-full object-cover object-top" />
+    <img src={`${base}${image}`} alt={imageAlt} class="w-full h-full object-cover" style="object-position: center 20%;" />
     <div class="absolute inset-0 bg-gradient-to-t from-fern-text/80 via-fern-text/30 to-transparent"></div>
     <div class="absolute bottom-0 left-0 right-0 p-6 md:p-10 max-w-4xl mx-auto">
       <span class="tag text-xs font-bold uppercase text-fern-pale tracking-widest mb-3 block">{tag}</span>
