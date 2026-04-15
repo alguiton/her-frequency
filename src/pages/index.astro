@@ -3,6 +3,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
+const allArticles = await Astro.glob('./articles/*.md');
+const recentArticles = allArticles
+  .sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime())
+  .slice(0, 3)
+  .map(a => ({
+    slug: a.url?.split('/').pop() ?? '',
+    title: a.frontmatter.title,
+    description: a.frontmatter.description,
+    tag: a.frontmatter.tag,
+    image: a.frontmatter.image,
+    imageAlt: a.frontmatter.imageAlt ?? a.frontmatter.title,
+  }));
+
 const jsonLd = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -67,30 +80,18 @@ const jsonLd = JSON.stringify({
       <a href="#" class="text-fern text-sm font-bold hover:underline">All articles →</a>
     </div>
     <div class="grid md:grid-cols-3 gap-6">
-      <a href={`${base}/articles/mckinsey-myths-women-performance`} class="block bg-white rounded-2xl overflow-hidden border border-fern-border group article-hover cursor-pointer">
-        <div class="overflow-hidden"><img src={`${base}/design-ref/reference%20pictures/women-at-work.png`} alt="Women in leadership walking factory floor" class="article-img w-full h-48 object-cover object-top" /></div>
-        <div class="p-5">
-          <span class="tag text-xs font-bold uppercase text-fern tracking-widest">Career · Policy</span>
-          <h3 class="font-black text-base leading-snug mt-2 mb-2 text-fern-text group-hover:text-fern transition-colors">McKinsey's Myths Debunked: What the Data Really Says About Women's Ambition</h3>
-          <p class="text-forest-fern text-xs leading-relaxed">Corporate narratives about women's performance have long relied on assumption. New research rewrites the story.</p>
-        </div>
-      </a>
-      <a href={`${base}/articles/csuite-pipeline-stem-women`} class="block bg-white rounded-2xl overflow-hidden border border-fern-border group article-hover cursor-pointer">
-        <div class="overflow-hidden"><img src={`${base}/design-ref/reference%20pictures/shutterstock568433176.jpg`} alt="Women scientists in lab" class="article-img w-full h-48 object-cover" /></div>
-        <div class="p-5">
-          <span class="tag text-xs font-bold uppercase text-fern tracking-widest">STEM · Leadership</span>
-          <h3 class="font-black text-base leading-snug mt-2 mb-2 text-fern-text group-hover:text-fern transition-colors">From Classroom to C-Suite: Breaking Barriers in the Energy Sector</h3>
-          <p class="text-forest-fern text-xs leading-relaxed">Global Study 2025 benchmarks reveal exactly where the pipeline breaks — and what hands-on strategy closes it.</p>
-        </div>
-      </a>
-      <a href={`${base}/articles/hormones-mood-performance`} class="block bg-white rounded-2xl overflow-hidden border border-fern-border group article-hover cursor-pointer">
-        <div class="overflow-hidden"><img src={`${base}/design-ref/reference%20pictures/burnout-768x768.png`} alt="Woman overwhelmed at desk" class="article-img w-full h-48 object-cover" /></div>
-        <div class="p-5">
-          <span class="tag text-xs font-bold uppercase text-fern tracking-widest">Health · Science</span>
-          <h3 class="font-black text-base leading-snug mt-2 mb-2 text-fern-text group-hover:text-fern transition-colors">Sex Hormones, Mood, and the Modern Office: What HR Should Know</h3>
-          <p class="text-forest-fern text-xs leading-relaxed">Studies confirm sex hormones significantly affect well-being and workplace performance. The structural response is overdue.</p>
-        </div>
-      </a>
+      {recentArticles.map(article => (
+        <a href={`${base}/articles/${article.slug}`} class="block bg-white rounded-2xl overflow-hidden border border-fern-border group article-hover cursor-pointer">
+          <div class="overflow-hidden">
+            <img src={`${base}${article.image}`} alt={article.imageAlt} class="article-img w-full h-48 object-cover object-top" />
+          </div>
+          <div class="p-5">
+            <span class="tag text-xs font-bold uppercase text-fern tracking-widest">{article.tag}</span>
+            <h3 class="font-black text-base leading-snug mt-2 mb-2 text-fern-text group-hover:text-fern transition-colors">{article.title}</h3>
+            <p class="text-forest-fern text-xs leading-relaxed">{article.description}</p>
+          </div>
+        </a>
+      ))}
     </div>
   </section>
 
