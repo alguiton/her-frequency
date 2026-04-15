@@ -11,13 +11,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
     <!-- Nav links -->
     <div class="hidden md:flex items-center gap-1 flex-1">
-      <a href={`${base}/articles`} class="px-3 py-2 text-sm font-semibold text-fern-text hover:text-fern hover:bg-fern-light rounded-lg transition-colors">Journal</a>
-      <a href={`${base}/energy`}   class="px-3 py-2 text-sm font-semibold text-fern-text hover:text-fern hover:bg-fern-light rounded-lg transition-colors">Energy & Industry</a>
-      <a href={`${base}/health`}   class="px-3 py-2 text-sm font-semibold text-fern-text hover:text-fern hover:bg-fern-light rounded-lg transition-colors">Biological Health</a>
+      <a href={`${base}/articles`} class="whitespace-nowrap px-4 py-2 text-sm font-semibold text-fern-text bg-fern-light border border-fern-border hover:bg-fern hover:text-white rounded-full transition-colors">Journal</a>
+      <a href={`${base}/energy`}   class="whitespace-nowrap px-4 py-2 text-sm font-semibold text-fern-text bg-fern-light border border-fern-border hover:bg-fern hover:text-white rounded-full transition-colors">Energy & Industry</a>
+      <a href={`${base}/health`}   class="whitespace-nowrap px-4 py-2 text-sm font-semibold text-fern-text bg-fern-light border border-fern-border hover:bg-fern hover:text-white rounded-full transition-colors">Biological Health</a>
 
       <!-- The Collective dropdown -->
       <div class="relative" id="collective-wrap">
-        <button onclick="toggleCollective()" class="flex items-center gap-1 px-3 py-2 text-sm font-semibold text-fern-text hover:text-fern hover:bg-fern-light rounded-lg transition-colors">
+        <button onclick="toggleCollective()" class="whitespace-nowrap flex items-center gap-1 px-4 py-2 text-sm font-semibold text-fern-text bg-fern-light border border-fern-border hover:bg-fern hover:text-white rounded-full transition-colors">
           The Collective
           <svg class="w-3.5 h-3.5 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
         </button>
@@ -28,7 +28,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         </div>
       </div>
 
-      <a href={`${base}#events`} class="px-3 py-2 text-sm font-semibold text-fern-text hover:text-fern hover:bg-fern-light rounded-lg transition-colors">Events</a>
+      <a href={`${base}#events`} class="whitespace-nowrap px-4 py-2 text-sm font-semibold text-fern-text bg-fern-light border border-fern-border hover:bg-fern hover:text-white rounded-full transition-colors">Events</a>
     </div>
 
     <!-- Search -->
