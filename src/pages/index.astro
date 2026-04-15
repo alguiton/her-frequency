@@ -3,18 +3,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
-const allArticles = await Astro.glob('./articles/*.md');
-const recentArticles = allArticles
-  .sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime())
-  .slice(0, 3)
-  .map(a => ({
-    slug: a.url?.split('/').pop() ?? '',
-    title: a.frontmatter.title,
-    description: a.frontmatter.description,
-    tag: a.frontmatter.tag,
-    image: a.frontmatter.image,
-    imageAlt: a.frontmatter.imageAlt ?? a.frontmatter.title,
-  }));
+const articleModules = import.meta.glob('./articles/*.md', { eager: true });
+const recentArticles = Object.entries(articleModules)
+  .map(([path, mod]: [string, any]) => ({
+    slug: path.split('/').pop()?.replace('.md', '') ?? '',
+    title: mod.frontmatter.title,
+    description: mod.frontmatter.description,
+    tag: mod.frontmatter.tag,
+    image: mod.frontmatter.image,
+    imageAlt: mod.frontmatter.imageAlt ?? mod.frontmatter.title,
+    date: mod.frontmatter.date,
+  }))
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  .slice(0, 3);
 
 const jsonLd = JSON.stringify({
   "@context": "https://schema.org",

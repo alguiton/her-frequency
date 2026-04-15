@@ -1,0 +1,118 @@
+<svg viewBox="0 0 700 640" xmlns="http://www.w3.org/2000/svg" width="700" height="640">
+
+  <!-- Background -->
+  <rect width="700" height="640" fill="#f2f9ee"/>
+
+  <!--
+    Centre: 350, 320  |  Outer radius: 175  |  Inner radius: 105
+    Phases (clockwise from 12 o'clock):
+      Menstrual  0°   → 64.3°
+      Follicular 64.3°→ 180°
+      Ovulation  180° → 205.7°
+      Luteal     205.7°→ 360°
+
+    Key outer points:
+      θ=0°    → (350, 145)
+      θ=64.3° → (507.7, 244.2)
+      θ=180°  → (350, 495)
+      θ=205.7°→ (274.1, 477.7)
+
+    Key inner points:
+      θ=0°    → (350, 215)
+      θ=64.3° → (444.6, 274.5)
+      θ=180°  → (350, 425)
+      θ=205.7°→ (304.5, 414.6)
+  -->
+
+  <!-- MENSTRUAL: 0° → 64.3° -->
+  <path d="M 350 145
+           A 175 175 0 0 1 507.7 244.2
+           L 444.6 274.5
+           A 105 105 0 0 0 350 215
+           Z"
+        fill="#d4eccc" stroke="#f2f9ee" stroke-width="4"/>
+
+  <!-- FOLLICULAR: 64.3° → 180° -->
+  <path d="M 507.7 244.2
+           A 175 175 0 0 1 350 495
+           L 350 425
+           A 105 105 0 0 0 444.6 274.5
+           Z"
+        fill="#8fbb85" stroke="#f2f9ee" stroke-width="4"/>
+
+  <!-- OVULATION: 180° → 205.7° (peak — dark fern) -->
+  <path d="M 350 495
+           A 175 175 0 0 1 274.1 477.7
+           L 304.5 414.6
+           A 105 105 0 0 0 350 425
+           Z"
+        fill="#3A5F0B" stroke="#f2f9ee" stroke-width="4"/>
+
+  <!-- LUTEAL: 205.7° → 360° -->
+  <path d="M 274.1 477.7
+           A 175 175 0 0 1 350 145
+           L 350 215
+           A 105 105 0 0 0 304.5 414.6
+           Z"
+        fill="#4A704D" stroke="#f2f9ee" stroke-width="4"/>
+
+  <!-- Centre white circle -->
+  <circle cx="350" cy="320" r="97" fill="white"/>
+
+  <!-- Centre label -->
+  <text x="350" y="304" text-anchor="middle"
+        font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="800" fill="#1a2e0a">4 Phases of</text>
+  <text x="350" y="322" text-anchor="middle"
+        font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="800" fill="#1a2e0a">the Menstrual</text>
+  <text x="350" y="340" text-anchor="middle"
+        font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="800" fill="#1a2e0a">Cycle</text>
+
+  <!-- ═══════════════════════════════════════════
+       LABELS — all positioned outside the ring
+       ═══════════════════════════════════════════ -->
+
+  <!-- MENSTRUAL — top right (midpoint ~32°) -->
+  <text x="476" y="112" text-anchor="middle"
+        font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="800"
+        fill="#1a2e0a" letter-spacing="0.5">MENSTRUAL</text>
+  <text x="476" y="128" text-anchor="middle"
+        font-family="Inter,system-ui,sans-serif" font-size="11" fill="#4A704D">Days 1–5</text>
+  <text x="476" y="142" text-anchor="middle"
+        font-family="Inter,system-ui,sans-serif" font-size="10" fill="#4A704D">Rest &amp; reflect</text>
+
+  <!-- FOLLICULAR — right (midpoint ~122°) -->
+  <text x="556" y="430" text-anchor="start"
+        font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="800"
+        fill="#1a2e0a" letter-spacing="0.5">FOLLICULAR</text>
+  <text x="556" y="446" text-anchor="start"
+        font-family="Inter,system-ui,sans-serif" font-size="11" fill="#4A704D">Days 5–14</text>
+  <text x="556" y="460" text-anchor="start"
+        font-family="Inter,system-ui,sans-serif" font-size="10" fill="#4A704D">Ideas &amp; energy</text>
+
+  <!-- OVULATION — bottom left (midpoint ~193°) -->
+  <text x="252" y="528" text-anchor="middle"
+        font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="800"
+        fill="#3A5F0B" letter-spacing="0.5">OVULATION</text>
+  <text x="252" y="544" text-anchor="middle"
+        font-family="Inter,system-ui,sans-serif" font-size="11" fill="#4A704D">Day 14 (ish)</text>
+  <!-- YOUR PEAK badge -->
+  <rect x="185" y="553" width="134" height="24" rx="12" fill="#3A5F0B"/>
+  <text x="252" y="569" text-anchor="middle"
+        font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="700" fill="white">⚡ YOUR PEAK</text>
+
+  <!-- LUTEAL — left (midpoint ~283°) -->
+  <text x="130" y="268" text-anchor="end"
+        font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="800"
+        fill="#1a2e0a" letter-spacing="0.5">LUTEAL</text>
+  <text x="130" y="284" text-anchor="end"
+        font-family="Inter,system-ui,sans-serif" font-size="11" fill="#4A704D">Days 15–28</text>
+  <text x="130" y="298" text-anchor="end"
+        font-family="Inter,system-ui,sans-serif" font-size="10" fill="#4A704D">Deep focus</text>
+
+  <!-- Footer note -->
+  <text x="350" y="622" text-anchor="middle"
+        font-family="Inter,system-ui,sans-serif" font-size="10" fill="#4A704D">
+    Based on a 28-day cycle · Individual cycles vary
+  </text>
+
+</svg>
