@@ -4,8 +4,8 @@ title: "5 Innovative Corporate Solutions Supporting Women During Periods"
 description: "A growing number of companies are moving from intention to action. Here are five proven approaches making a real difference."
 date: "2026-04-08"
 tag: "WELLBEING · WORKPLACE"
-image: "/design-ref/reference%20pictures/Womens-Health-in-The-Workplace-1024x576.png"
-imageAlt: "Doctor consulting with a female patient in a workplace health context"
+image: "/design-ref/reference%20pictures/employee%20welness.jpg"
+imageAlt: "Employee wellness sign"
 readTime: "5 min read"
 ---
 
