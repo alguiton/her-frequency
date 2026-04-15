@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const articleModules = import.meta.glob('./*.md', { eager: true });
+const articles = Object.entries(articleModules)
+  .map(([path, mod]: [string, any]) => ({
+    slug: path.split('/').pop()?.replace('.md', '') ?? '',
+    title: mod.frontmatter.title,
+    description: mod.frontmatter.description,
+    tag: mod.frontmatter.tag,
+    image: mod.frontmatter.image,
+    imageAlt: mod.frontmatter.imageAlt ?? mod.frontmatter.title,
+    date: mod.frontmatter.date,
+    readTime: mod.frontmatter.readTime ?? '5 min read',
+  }))
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+---
+<BaseLayout
+  title="All Articles — Her Frequency"
+  description="Evidence-based articles on women's health, hormonal science and STEM careers."
+>
+  <section class="bg-fern-light border-b border-fern-border py-12 px-5">
+    <div class="max-w-6xl mx-auto">
+      <span class="tag text-xs font-bold uppercase text-fern tracking-widest mb-3 block">The Journal</span>
+      <h1 class="text-4xl md:text-5xl font-black text-fern-text leading-tight">All Articles</h1>
+      <p class="text-forest-fern mt-3 text-base max-w-xl">Every piece we have published — science-led, jargon-free, written for women who want the full picture.</p>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-5 py-14">
+    <div class="grid md:grid-cols-3 gap-6">
+      {articles.map(article => (
+        <a href={`${base}/articles/${article.slug}`} class="block bg-white rounded-2xl overflow-hidden border border-fern-border group article-hover cursor-pointer">
+          <div class="overflow-hidden">
+            <img
+              src={`${base}${article.image}`}
+              alt={article.imageAlt}
+              class="article-img w-full h-48 object-cover object-top"
+            />
+          </div>
+          <div class="p-5">
+            <span class="tag text-xs font-bold uppercase text-fern tracking-widest">{article.tag}</span>
+            <h2 class="font-black text-base leading-snug mt-2 mb-2 text-fern-text group-hover:text-fern transition-colors">{article.title}</h2>
+            <p class="text-forest-fern text-xs leading-relaxed mb-3">{article.description}</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-forest-fern">{new Date(article.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+              <span class="text-xs text-fern font-bold">{article.readTime}</span>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

@@ -78,7 +78,7 @@ const jsonLd = JSON.stringify({
   <section id="journal" class="max-w-6xl mx-auto px-5 py-14">
     <div class="flex items-center justify-between mb-8">
       <h2 class="text-2xl font-black tracking-tight text-fern-text">The Journal</h2>
-      <a href="#" class="text-fern text-sm font-bold hover:underline">All articles →</a>
+      <a href={`${base}/articles`} class="text-fern text-sm font-bold hover:underline">All articles →</a>
     </div>
     <div class="grid md:grid-cols-3 gap-6">
       {recentArticles.map(article => (
@@ -120,7 +120,7 @@ const jsonLd = JSON.stringify({
   <section id="stem" class="max-w-6xl mx-auto px-5 py-14">
     <div class="flex items-center justify-between mb-8">
       <h2 class="text-2xl font-black tracking-tight text-fern-text">Energy &amp; Industry</h2>
-      <a href="#" class="text-fern text-sm font-bold hover:underline">All →</a>
+      <a href={`${base}/articles`} class="text-fern text-sm font-bold hover:underline">All →</a>
     </div>
     <div class="grid md:grid-cols-1 gap-6 max-w-2xl">
       <a href={`${base}/articles/csuite-pipeline-stem-women`} class="block bg-white rounded-2xl overflow-hidden border border-fern-border group article-hover cursor-pointer">
@@ -140,7 +140,7 @@ const jsonLd = JSON.stringify({
     <div class="max-w-6xl mx-auto">
       <div class="flex items-center justify-between mb-8">
         <h2 class="text-2xl font-black tracking-tight text-fern-text">Biological Health</h2>
-        <a href="#" class="text-fern text-sm font-bold hover:underline">All →</a>
+        <a href={`${base}/articles`} class="text-fern text-sm font-bold hover:underline">All →</a>
       </div>
       <div class="grid md:grid-cols-3 gap-6">
         <a href={`${base}/articles/productivity-hormonal-cycles`} class="block bg-white rounded-2xl overflow-hidden border border-fern-border group article-hover cursor-pointer">
